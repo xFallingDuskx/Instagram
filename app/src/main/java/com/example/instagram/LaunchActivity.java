@@ -11,9 +11,9 @@ import android.widget.Button;
 public class LaunchActivity extends AppCompatActivity {
 
     public static final String TAG = "LaunchActivity";
-
     private Button btnLogin;
     private Button btnCreate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
