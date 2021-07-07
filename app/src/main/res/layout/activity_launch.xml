@@ -17,25 +17,28 @@
 
     <Button
         android:id="@+id/btnCreate"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivLogo"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="103dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="0dp"
         android:text="Create New Account" />
 
     <Button
         android:id="@+id/btnLogin_Launch"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnCreate"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="0dp"
         android:text="Log In" />
 </RelativeLayout>
