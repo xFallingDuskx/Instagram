@@ -15,7 +15,7 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <EditText
-        android:id="@+id/tvDescription"
+        android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
@@ -29,7 +29,7 @@
         android:id="@+id/btnCaptureImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDescription"
+        android:layout_below="@+id/etDescription"
         android:layout_alignParentStart="false"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
