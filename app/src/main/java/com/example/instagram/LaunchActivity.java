@@ -34,5 +34,14 @@ public class LaunchActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick sign up button");
+                Intent intent = new Intent(LaunchActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
