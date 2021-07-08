@@ -1,6 +1,8 @@
 package com.example.instagram;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -60,6 +64,21 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ivPostImage = itemView.findViewById(R.id.ivPostImage_Post);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvTimestamp = itemView.findViewById(R.id.tvTimestamp);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        Post post = posts.get(position);
+                        Intent intent = new Intent(context, PostDetailsActivity.class);
+                        intent.putExtra(Post.class.getSimpleName(), Parcels.wrap(post));
+                        context.startActivity(intent);
+
+                        Log.i(TAG, "Opening PostDetailsActivity");
+                    }
+                }
+            });
         }
 
         public void bind(Post post) {
