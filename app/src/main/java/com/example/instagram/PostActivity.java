@@ -28,9 +28,9 @@ import com.parse.SaveCallback;
 import java.io.File;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class PostActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "PostActivity";
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private ImageView ivLogout;
     private EditText etDescription;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_post);
 
         queryPost();
 
@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String description = etDescription.getText().toString();
                 if (description.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Description cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PostActivity.this, "Description cannot be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (photoFile == null || ivPostImage.getDrawable() == null) {
-                    Toast.makeText(MainActivity.this, "Must include an image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PostActivity.this, "Must include an image", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         photoFile = getPhotoFileUri(photoFileName);
 
         // Wrap File object into a content provider (fileProvider)
-        Uri fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.codepath.fileprovider", photoFile);
+        Uri fileProvider = FileProvider.getUriForFile(PostActivity.this, "com.codepath.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
         Log.i(TAG, "Program has reached inside of launchCamera() method");
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
             public void done(ParseException e) {
                 if (e != null) {
                     Log.e(TAG, "Error while saving", e);
-                    Toast.makeText(MainActivity.this, "Unable to save", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PostActivity.this, "Unable to save", Toast.LENGTH_SHORT).show();
                 }
                 Log.i(TAG, "Post save was successful");
                 // Rest description and post image after post has been made by user

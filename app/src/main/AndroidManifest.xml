@@ -19,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Instagram">
+        <activity android:name=".FeedActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -30,8 +31,8 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".PostActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".LaunchActivity">
             <intent-filter>

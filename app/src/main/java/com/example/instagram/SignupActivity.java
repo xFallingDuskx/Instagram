@@ -2,7 +2,6 @@ package com.example.instagram;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,8 +12,6 @@ import android.widget.Toast;
 
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
-
-import java.text.ParseException;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -77,7 +74,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void goMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, FeedActivity.class);
         startActivity(intent);
 
         // To remove this activity from the stack so user can not go back to login screen

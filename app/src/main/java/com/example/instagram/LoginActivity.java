@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void goMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, FeedActivity.class);
         startActivity(intent);
 
         // To remove this activity from the stack so user can not go back to login screen
