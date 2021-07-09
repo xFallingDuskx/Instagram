@@ -46,9 +46,7 @@ public class FeedFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FeedFragment() {
-        // Required empty public constructor
-    }
+    public FeedFragment() {}
 
     /**
      * Use this factory method to create a new instance of
