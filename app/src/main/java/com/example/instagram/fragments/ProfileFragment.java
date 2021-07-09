@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.instagram.Post;
 import com.example.instagram.PostsAdapter;
@@ -121,11 +122,20 @@ public class ProfileFragment extends Fragment {
         tvFullname.setText(user.getString("fullName"));
         tvEmail.setText(user.getEmail());
 
-
         Date date = user.getCreatedAt();
         DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
         String strDate = dateFormat.format(date);
         tvCreatedAt.setText(strDate);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut(); // Log user out
+                ParseUser currentUser = ParseUser.getCurrentUser(); // User is now null
+                getActivity().finish(); // navigate backwards to Login screen
+                Toast.makeText(getContext().getApplicationContext(), "You've been logged out", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void displayPosts() {

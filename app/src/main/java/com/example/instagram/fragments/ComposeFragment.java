@@ -116,16 +116,6 @@ public class ComposeFragment extends Fragment {
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
 
-//        ivLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ParseUser.logOut(); // Log user out
-//                ParseUser currentUser = ParseUser.getCurrentUser(); // User is now null
-//                finish(); // navigate backwards to Login screen
-//                Toast.makeText(getApplicationContext(), "You've been logged out", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
