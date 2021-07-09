@@ -143,7 +143,6 @@ public class ComposeFragment extends Fragment {
 
                 Intent intent = new Intent(getContext(), FeedActivity.class);
                 getContext().startActivity(intent);
-//                startActivityForResult(intent, REQUEST_CODE);
             }
         });
 
