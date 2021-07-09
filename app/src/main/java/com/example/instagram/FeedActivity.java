@@ -50,5 +50,7 @@ public class FeedActivity extends AppCompatActivity {
                 return true;
             }
         });
+        // Set default selection - only for Home
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
 }
