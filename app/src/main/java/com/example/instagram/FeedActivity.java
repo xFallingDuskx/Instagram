@@ -1,15 +1,18 @@
 package com.example.instagram;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.instagram.fragments.ComposeFragment;
 import com.example.instagram.fragments.FeedFragment;
+import com.example.instagram.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FeedActivity extends AppCompatActivity {
@@ -28,19 +31,19 @@ public class FeedActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                FeedFragment fragment;
+                Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.action_home:
                         fragment = new FeedFragment();
-                        Toast.makeText(FeedActivity.this, "Home!", Toast.LENGTH_SHORT).show();
+                        Log.i(TAG, "Heading to Home Fragment");
                         break;
                     case R.id.action_compose:
-                        Toast.makeText(FeedActivity.this, "Compose!", Toast.LENGTH_SHORT).show();
-                        fragment = new FeedFragment();
+                        Log.i(TAG, "Heading to Compose Fragment");
+                        fragment = new ComposeFragment();
                         break;
                     case R.id.action_profile:
-                        Toast.makeText(FeedActivity.this, "Profile!", Toast.LENGTH_SHORT).show();
-                        fragment = new FeedFragment();
+                        Log.i(TAG, "Heading to Profile Fragment");
+                        fragment = new ProfileFragment();
                         break;
                     default:
                         fragment = new FeedFragment();
